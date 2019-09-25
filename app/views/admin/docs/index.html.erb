@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Docs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @docs.each do |doc| %>
+      <tr>
+        <td><%= doc.title %></td>
+        <td><%= doc.site %></td>
+        <td><%= doc.filename %></td>
+        <td><%= link_to 'Show', [:admin, doc] %></td>
+        <td><%= link_to 'Edit', edit_admin_doc_path(doc) %></td>
+        <td><%= link_to 'Destroy', [:admin, doc], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Doc', new_admin_doc_path %>

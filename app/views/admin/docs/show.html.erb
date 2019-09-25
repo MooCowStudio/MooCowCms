@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<%= @doc.title %>
+<%= @doc.site %>
+<%= @doc.filename %>
+<%= raw @doc.content %>
+
+<%= link_to 'Edit', edit_admin_doc_path(@doc) %> |
+<%= link_to 'Back', admin_docs_path %>
