@@ -1,0 +1,17 @@
+<%= @doc.title %>
+<%= @doc.content %>
+
+<script type="text/javascript">
+  $(function() {
+    var hostUrl= "/api/v1/access_logs";
+    var site_id = <%= @doc.site_id %>;
+    var doc_id = <%= @doc.id %>;
+    $.ajax({
+      url: hostUrl,
+      type:'POST',
+      dataType: 'json',
+      data : {access_log: {site_id: site_id, doc_id: doc_id }},
+      timeout:3000
+    })
+  });
+</script>

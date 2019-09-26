@@ -1,6 +1,7 @@
 class AdminController < ApplicationController
   before_action :authenticate
   protect_from_forgery with: :null_session
+  layout "admin"
 
   private
     def authenticate

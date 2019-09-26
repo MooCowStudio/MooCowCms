@@ -7,9 +7,78 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Kosugi&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/8f898944b4.js" crossorigin="anonymous"></script>
+    <title>MooCowフラバール</title>
   </head>
 
   <body>
-    <%= yield %>
+    <header class="header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <div class="text-center">
+              <h1><a href="/">MooCowフラバール</a></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container main">
+      <div class="row">
+        <div class="col-md-8 wrap">
+          <%= yield %>
+        </div>
+        <div class="col-md-4 wrap">
+          <div class="profile">
+            <h4>プロフィール</h4>
+            <%= image_tag "/assets/profile.jpg", alt: "プロフィール", class: "img-profile" %>
+            <h5>牛くん</h5>
+            <p>MooCowスタジオ代表</P>
+            <p>工業高校卒業→大手企業(製造業)に就職→3年2ヶ月で退職→中小企業(IT系)に就職→1ヶ月で退職→起業</P>
+            <p>普段はWebライティングの受託、メディア運営を中心に活動をしています。</P>
+          </div>
+
+          <div class="access-ranking">
+            <h4>よく読まれている記事</h4>
+            <div class="access-ranking-docs">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <div class="text-center">
+              <div>
+                <a href="https://hp.moocow-st.com">MooCowスタジオ</a>
+                <a href="https://twitter.com/moocow_st"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript">
+      $(function() {
+        var hostUrl= "/api/v1/access_ranking";
+        $.ajax({
+          url: hostUrl,
+          type:'GET',
+          dataType: 'json',
+          timeout:3000,
+        }).done(function(data) {
+          $.each(data, function(i, value) {
+            var tag = '<div><a href="/docs' + value[1] + '"><img src="' + value[2] + '" alt="' + value[0] + '" class="img-access-ranking"></a><h6><a href="/docs/' + value[1] + '">' + value[0] + '</a></h6></div>'
+            $(".access-ranking-docs").append(tag)
+          })
+        })
+      });
+    </script>
   </body>
 </html>

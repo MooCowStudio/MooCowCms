@@ -32,3 +32,6 @@ yarn-debug.log*
 
 /containers/postgres/*
 !/containers/postgres/.keep
+
+/public/uploads/*
+/public/sites/*

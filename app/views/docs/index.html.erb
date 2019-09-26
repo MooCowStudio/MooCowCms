@@ -1,0 +1,20 @@
+<div class="article">
+  <% @docs.each do |doc| %>
+    <div>
+      <!-- 公開日の表示 -->
+      <p class="created-date">
+        <time><%= doc.created_at.strftime("%Y/%m/%d") %></time>
+      </p>
+      <!-- タイトルの表示 -->
+      <h2><%= link_to doc.title, "/docs/#{doc.filename}" %></h2>
+      <!-- サムネイルの表示 -->
+      <%= link_to "/docs/#{doc.filename}" do %>
+        <%= image_tag doc.image.try(:url), alt: doc.title, class: "img-article" %>
+      <% end %>
+      <!-- ディスクリプションの表示 -->
+      <p><%= rm_html_tag(doc.content.body.to_s).truncate(200) %></p>
+      <button type="button" onclick='location.href="<%= "/docs/#{doc.filename}" %>"'>続きを読む</button>
+    </div>
+  <% end %>
+  <%= paginate @docs %>
+</div>

@@ -22,8 +22,18 @@
   </div>
 
   <div class="field">
+    <%= form.label :layout_id %>
+    <%= form.select :layout_id, @layouts.pluck(:name, :id) %>
+  </div>
+
+  <div class="field">
     <%= form.label :filename %>
     <%= form.text_field :filename %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
   </div>
 
   <div class="field">

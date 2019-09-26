@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_25_083724) do
+ActiveRecord::Schema.define(version: 2019_09_25_161446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "access_logs", force: :cascade do |t|
+    t.bigint "site_id", null: false
+    t.bigint "doc_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["doc_id"], name: "index_access_logs_on_doc_id"
+    t.index ["site_id"], name: "index_access_logs_on_site_id"
+  end
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -53,7 +62,19 @@ ActiveRecord::Schema.define(version: 2019_09_25_083724) do
     t.string "filename"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "layout_id"
+    t.string "image"
     t.index ["site_id"], name: "index_docs_on_site_id"
+  end
+
+  create_table "layouts", force: :cascade do |t|
+    t.bigint "site_id", null: false
+    t.string "name"
+    t.string "filename"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["site_id"], name: "index_layouts_on_site_id"
   end
 
   create_table "sites", force: :cascade do |t|
@@ -63,5 +84,8 @@ ActiveRecord::Schema.define(version: 2019_09_25_083724) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "access_logs", "docs"
+  add_foreign_key "access_logs", "sites"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "layouts", "sites"
 end
