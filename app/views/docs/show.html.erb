@@ -12,7 +12,7 @@
   <%= image_tag @doc.image.url, alt: "バレーボール", class: "img-article" %>
   <p><span class="oi oi-warning"></span>正式な表記は「ふらば〜る」ですが、本記事では「フラバール」と表記します。</p>
 
-  <%= @doc.content %>
+  <%= @doc.body.html_safe %>
   <div class="sns-btn">
     <div class="twitter-btn">
       <a href="https://twitter.com/share?url=<%= request.url %>&via=@moocow_st&related=@moocow_st&hashtags=ふらば〜る,MooCowフラバール&" rel="nofollow" target="_blank">

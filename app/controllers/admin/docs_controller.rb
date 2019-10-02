@@ -80,8 +80,6 @@ class Admin::DocsController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def doc_params
-      docpar = params.fetch(:doc, {}).permit(:site_id, :title, :body, :filename, :content, :layout_id, :image)
-      docpar[:content] = docpar[:content].gsub("&lt;", "<").gsub("&gt;", ">")
-      docpar
+      params.fetch(:doc, {}).permit(:site_id, :title, :body, :filename, :layout_id, :image)
     end
 end

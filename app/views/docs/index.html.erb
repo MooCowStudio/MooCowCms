@@ -14,7 +14,7 @@
         <%= image_tag doc.image.try(:url), alt: doc.title, class: "img-article" %>
       <% end %>
       <!-- ディスクリプションの表示 -->
-      <div><%= rm_html_tag(doc.content.body.to_s).truncate(200) %></div>
+      <div><%= rm_html_tag(doc.body.to_s).truncate(200) %></div>
       <div class="readmore-btn">
         <button type="button" onclick='location.href="<%= "/docs/#{doc.filename}" %>"'>続きを読む</button>
       </div>
