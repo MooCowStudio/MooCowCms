@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'Bitter';
-	src: url('Bitter-Regular.otf') format('truetype');
+	src: url(<%= asset_path 'Bitter-Regular.otf' %>) format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -69,24 +69,6 @@
 
 .footer a {
 	color: white;
-}
-
-@media (min-width: 1200px){
-	.container {
-	    width: 1170px;
-	}
-}
-
-@media (min-width: 992px){
-	.container {
-	    width: 970px;
-	}
-}
-
-@media (min-width: 768px){
-	.container {
-	    width: 750px;
-	}
 }
 
 .breadcrumb {
@@ -268,7 +250,7 @@
   display: table-cell;
 }
 
-.hatevu-btn a:hover {
+.hatebu-btn a:hover {
   text-decoration: none;
 }
 

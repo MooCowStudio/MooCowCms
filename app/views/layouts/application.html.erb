@@ -19,7 +19,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col header-col">
-            <%= image_tag "/assets/furaba-ru-header.jpg", alt: "MooCowフラバールheader" %>
+            <%= image_tag asset_path("/assets/furaba-ru-header.jpg"), alt: "MooCowフラバールheader" %>
             <h1><a href="/">MooCowフラバール</a></h1>
             <p>もうルールで迷わない！<br>
             フラバールバレーがさらに楽しくなる方法</p>
@@ -29,13 +29,20 @@
     </header>
     <div class="container main">
       <div class="row">
+        <div class="col">
+          <ul class="breadcrumb">
+            <%= yield(:crumb) %>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-md-8 wrap">
           <%= yield %>
         </div>
         <div class="col-md-4 wrap">
           <div class="profile">
             <h4>プロフィール</h4>
-            <%= image_tag "/assets/profile.jpg", alt: "プロフィール", class: "img-profile" %>
+            <%= image_tag asset_path("/assets/profile.jpg"), alt: "プロフィール", class: "img-profile" %>
             <h5>牛くん</h5>
             <p>MooCowスタジオ代表</P>
             <p>工業高校卒業→大手企業(製造業)に就職→3年2ヶ月で退職→中小企業(IT系)に就職→1ヶ月で退職→起業</P>

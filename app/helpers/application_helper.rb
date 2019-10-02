@@ -20,4 +20,29 @@ module ApplicationHelper
       "#{page_title} | #{base_title}"
     end
   end
+
+  def breadcrumb_html(crumb)
+    html = ""
+    home = content_tag(:li) do
+      link_to("/") do
+        content_tag(:span, class: "oi oi-home") do
+          "HOME"
+        end
+      end
+    end
+    html << home
+    if crumb.present?
+      crumb.each do |c|
+        c_link = content_tag(:li) do
+          link_to(c[:url]) do
+            content_tag(:span) do
+              c[:title]
+            end
+          end
+        end
+        html << c_link
+      end
+    end
+    html.html_safe
+  end
 end
