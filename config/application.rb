@@ -33,6 +33,7 @@ module MooCowCms
     config.generators.system_tests = nil
     config.active_job.queue_adapter = :sidekiq
     config.time_zone = 'Tokyo'
-    config.active_record.default_timezone = :local 
+    config.active_record.default_timezone = :local
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
   end
 end

@@ -1,0 +1,291 @@
+@font-face {
+	font-family: 'Bitter';
+	src: url('Bitter-Regular.otf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.body {
+  font-family: 'Bitter', 'Kosugi', sans-serif;
+  margin: 0;
+  padding: 0;
+  width:100%;
+  height:100%;
+	background-color: #e8e8e8;
+}
+
+.header {
+  position: relative;
+}
+
+.header-col {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.header img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.header a {
+  position: absolute;
+  color: #ffffff;
+  font-size: 35px;
+  left: 5%;
+  top: 30%;
+  text-shadow:1px 1px 0 #000, -1px -1px 0 #000,
+            -1px 1px 0 #000, 1px -1px 0 #000,
+            0px 1px 0 #000,  0 -1px 0 #000,
+            -1px 0 0 #000, 1px 0 0 #000;
+}
+
+.header p {
+  position: absolute;
+  color: #ffffff;
+  font-size: 13px;
+  left: 5%;
+  top: 50%;
+  text-align: left;
+  text-shadow:1px 1px 0 #000, -1px -1px 0 #000,
+            -1px 1px 0 #000, 1px -1px 0 #000,
+            0px 1px 0 #000,  0 -1px 0 #000,
+            -1px 0 0 #000, 1px 0 0 #000;
+}
+
+.body a:hover{
+  text-decoration: none;
+}
+
+.footer {
+	background-color: #555555;
+	width: 100%;
+	height: 50px;
+	margin-bottom: 0;
+	z-index: 100;
+	bottom: 0;
+}
+
+.footer a {
+	color: white;
+}
+
+@media (min-width: 1200px)
+.container {
+    width: 1170px;
+}
+
+@media (min-width: 992px)
+.container {
+    width: 970px;
+}
+
+@media (min-width: 768px)
+.container {
+    width: 750px;
+}
+
+.breadcrumb {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-left: 0;
+  height: 30px;
+}
+
+.breadcrumb li {
+  display:inline;/*横に並ぶように*/
+  list-style: none;
+  font-weight: bold;/*太字*/
+}
+
+.breadcrumb li:after {/* ▶を表示*/
+  font-family: FontAwesome;
+  content: '>';
+  padding: 0 3px;
+  color: silver;
+}
+
+.breadcrumb li:last-child:after {
+  content: '';
+}
+
+.breadcrumb li a {
+  text-decoration: none;
+  color: #555555;
+}
+
+.breadcrumb li a:hover {
+  text-decoration: underline;
+}
+
+.wrap {
+  text-align: center;
+}
+
+.wrap a {
+  color: black;
+}
+
+.article, .articles {
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  text-align: justify;
+}
+
+.article p, .article h2, .articles div, .articles h2{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.article p, .articles div {
+  padding-top: 10px;
+}
+
+.article h3 {
+  padding-top: 40px;
+}
+
+.article-title {
+  text-align: center;
+}
+
+.created-date {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.img-article {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.readmore-btn {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.readmore-btn button{
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #1800ae;
+  border: solid 2px #1800ae;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.pagination {
+  margin-right: 0 ;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.img-profile {
+  width: 130px;
+  margin: 20px;
+  border-radius: 50%;
+}
+
+.profile {
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.profile h4 {
+  padding-top: 20px;
+}
+
+.profile p {
+  font-size: 14px;
+  margin-top: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 0;
+}
+
+.access-ranking h4 {
+  padding-top: 20px;
+}
+
+.img-access-ranking {
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-top: 20px;
+}
+
+.access-ranking h6 {
+  margin-top: 20px;
+}
+
+.access-ranking {
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.access-ranking h6 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.sns-btn {
+  text-align: center;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.sns-btn a {
+  color: #ffffff
+}
+
+.twitter-btn {
+  width: 100px;
+  background-color: #55acee;
+  display: table-cell;
+}
+
+.facebook-btn {
+  width: 100px;
+  background-color: #3b5998;
+  display: table-cell;
+}
+
+.hatebu-btn {
+  width: 100px;
+  background-color: #008fde;
+  display: table-cell;
+}
+
+.hatevu-btn a:hover {
+  text-decoration: none;
+}
+
+.article h3 {
+  position: relative;
+}
+
+.article h3:after {
+  content: "";
+  display: block;
+  height: 4px;
+  background: -webkit-linear-gradient(to right, rgb(230, 90, 90), transparent);
+  background: linear-gradient(to right, rgb(230, 90, 90), transparent);
+}
+
+.articles .doc {
+  padding: 0px;
+}
+
+.trix-content div {
+  padding-left: 20px;
+  padding-right: 20px;
+}

@@ -21,6 +21,6 @@ COPY ./ /var/www/html
 
 # set bundle path
 RUN bundle config path vendor/bundle
-RUN bundle install
+RUN bundle install --path vendor/bundle
 
 RUN mkdir -p /tmp/shared/sockets/

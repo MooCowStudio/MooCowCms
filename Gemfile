@@ -37,6 +37,7 @@ gem 'image_processing'
 
 gem 'carrierwave'
 gem 'rmagick'
+gem 'fog'
 
 gem 'kaminari'
 

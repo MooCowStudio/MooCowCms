@@ -1,6 +1,8 @@
 require 'sidekiq/web'
 Rails.application.routes.draw do
 
+  root to: 'docs#index'
+
   mount Sidekiq::Web, at: '/sidekiq'
 
   get '/docs/:filename', to: 'docs#show'

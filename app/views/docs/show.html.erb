@@ -1,5 +1,40 @@
-<%= @doc.title %>
-<%= @doc.content %>
+<% provide(:title, @doc.title) %>
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8 wrap">
+    <div class="article">
+      <!-- 公開日の表示 -->
+      <p class="created-date">
+        <time><%= @doc.created_at.strftime("%Y/%m/%d") %></time>
+      </p>
+      <!-- タイトルの表示 -->
+      <h2 class="article-title"><%= @doc.title %></h2>
+      <!-- 本文の表示 -->
+      <%= image_tag @doc.image.url, alt: "バレーボール", class: "img-article" %>
+      <p><span class="oi oi-warning"></span>正式な表記は「ふらば〜る」ですが、本記事では「フラバール」と表記します。</p>
+
+      <%= @doc.content %>
+      <div class="sns-btn">
+        <div class="twitter-btn">
+          <a href="https://twitter.com/share?
+            url={ページのURL}&
+            via=@moocow_st&
+            related=@moocow_st&
+            hashtags=ふらば〜る,MooCowフラバール&"
+            rel="nofollow"
+            target="_blank"><div><i class="fab fa-twitter"></i></div></a>
+        </div>
+        <div class="facebook-btn">
+          <a href="http://www.facebook.com/share.php?u={URL}" rel="nofollow" target="_blank"><div><i class="fab fa-facebook-f"></i></div></a>
+        </div>
+        <div class="hatebu-btn">
+          <a href="http://b.hatena.ne.jp/add?mode=confirm&url={URL}&title={ページのタイトル}"target="_blank"
+           rel="nofollow"><div>B!</div></a>
+        </div>
+      </div>
+    </div>
 
 <script type="text/javascript">
   $(function() {
