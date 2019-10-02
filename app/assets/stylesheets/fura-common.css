@@ -71,19 +71,22 @@
 	color: white;
 }
 
-@media (min-width: 1200px)
-.container {
-    width: 1170px;
+@media (min-width: 1200px){
+	.container {
+	    width: 1170px;
+	}
 }
 
-@media (min-width: 992px)
-.container {
-    width: 970px;
+@media (min-width: 992px){
+	.container {
+	    width: 970px;
+	}
 }
 
-@media (min-width: 768px)
-.container {
-    width: 750px;
+@media (min-width: 768px){
+	.container {
+	    width: 750px;
+	}
 }
 
 .breadcrumb {
@@ -288,4 +291,36 @@
 .trix-content div {
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.privacy-title {
+ padding-top: 20px;
+}
+
+.privacy a {
+ color: #007bff;
+ text-decoration: underline;
+}
+
+.contact-title {
+  padding-top: 20px;
+}
+
+.form-group {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.name-box, .email-box {
+  width: 100%;
+}
+
+.message-box {
+  width: 100%;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+}
+
+.submit-btn {
+  text-align: center;
 }
