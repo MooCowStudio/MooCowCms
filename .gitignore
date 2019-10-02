@@ -35,6 +35,11 @@ yarn-debug.log*
 
 /public/uploads/*
 /public/sites/*
+/public/docs/*
+/public/privacy_policy.html
+/public/500.html
+/public/404.html
+/public/502.html
 
 .env
 .DS_Store

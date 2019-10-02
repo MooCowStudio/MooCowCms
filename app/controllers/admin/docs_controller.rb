@@ -32,7 +32,7 @@ class Admin::DocsController < AdminController
 
     respond_to do |format|
       if @doc.save
-        GeneratePageJob.perform_later(@doc.id)
+        GeneratePageJob.perform_later("docs", @doc.id)
         format.html { redirect_to admin_doc_url(@doc), notice: 'Doc was successfully created.' }
         format.json { render :show, status: :created, location: @doc }
       else
@@ -49,7 +49,7 @@ class Admin::DocsController < AdminController
   def update
     respond_to do |format|
       if @doc.update(doc_params)
-        GeneratePageJob.perform_later(@doc.id)
+        GeneratePageJob.perform_later("docs", @doc.id)
         format.html { redirect_to admin_doc_url(@doc), notice: 'Doc was successfully updated.' }
         format.json { render :show, status: :ok, location: @doc }
       else

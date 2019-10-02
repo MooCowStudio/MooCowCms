@@ -1,7 +1,15 @@
 require 'sidekiq/web'
 Rails.application.routes.draw do
-
   root to: 'docs#index'
+
+  get 'contact', to: 'contact#index'
+  get 'contact/finish', to: 'contact#finish'
+  post 'contact', to: 'contact#create'
+
+  get '/privacy_policy', to: 'static#privacy'
+  get '/404', to: 'static#not_found'
+  get '/500', to: 'static#server_error'
+  get '/502', to: 'static#bad_gateway'
 
   mount Sidekiq::Web, at: '/sidekiq'
 

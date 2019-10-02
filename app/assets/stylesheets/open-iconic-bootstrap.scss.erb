@@ -4,8 +4,8 @@
 
 @font-face {
   font-family: 'Icons';
-  src: font-url('/assets/open-iconic.eot');
-  src: font-url('/assets/open-iconic.eot?#iconic-sm') format('embedded-opentype'), font-url('/assets/open-iconic.woff') format('woff'), font-url('/assets/pen-iconic.ttf') format('truetype'), font-url('aseets/open-iconic.svg#iconic-sm') format('svg');
+  src: url(<%= asset_path 'open-iconic.eot' %>);
+  src: url(<%= asset_path 'open-iconic.eot?#iconic-sm' %>) format('embedded-opentype'), font-url('/assets/open-iconic.woff') format('woff'), font-url('/assets/pen-iconic.ttf') format('truetype'), font-url('aseets/open-iconic.svg#iconic-sm') format('svg');
   font-weight: normal;
   font-style: normal;
 }

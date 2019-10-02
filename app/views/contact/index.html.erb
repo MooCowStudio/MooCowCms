@@ -1,0 +1,23 @@
+<% provide(:title, "お問い合わせ") %>
+<% provide(:crumb, breadcrumb_html([{title: "お問い合わせ", url: "/contact"}])) %>
+
+<div class="article">
+  <h2 class="article-title contact-title">お問い合わせ</h2>
+  <%= form_for @contact, url: '/contact', method: :post do |f|%>
+    <div class="form-group">
+      <label for="name" class="col-form-label">お名前</label>
+      <%= f.text_field :name, placeholder: "田中太郎", class: "form-control contact-box name-box", required: true %>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail3" class="col-form-label">メールアドレス</label>
+      <%= f.email_field :email, placeholder: "sample@example.com", class: "form-control contact-box email-box", required: true %>
+    </div>
+    <div class="form-group">
+      <label for="message" class="col-form-label">お問い合わせ内容</label>
+      <%= f.text_area :body, class: "form-control contact-box message-box", rows: 8, cols: 80, required: true %>
+    </div>
+    <div class="form-group submit-btn">
+      <button type="submit" class="btn btn-primary submit-btn">送信</button>
+    </div>
+  <% end %>
+</div>
