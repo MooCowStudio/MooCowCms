@@ -6,6 +6,7 @@ CarrierWave.configure do |config|
     region: 'ap-northeast-1'
   }
 
+  config.fog_public = false
   config.fog_directory  = 'moocow-furaberl'
   config.cache_storage = :fog
 end
