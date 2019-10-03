@@ -64,7 +64,7 @@ class Admin::DocsController < AdminController
   # DELETE /docs/1
   # DELETE /docs/1.json
   def destroy
-    FileUtils.rm(File.join(Rails.root, "public", "docs", doc.filename))
+    FileUtils.rm(File.join(Rails.root, "public", "docs", "#{@doc.filename}.html")) if FileTest.exist?(File.join(Rails.root, "public", "docs", "#{@doc.filename}.html"))
     @doc.destroy
     respond_to do |format|
       format.html { redirect_to admin_docs_url, notice: 'Doc was successfully destroyed.' }
