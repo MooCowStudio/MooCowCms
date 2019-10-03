@@ -9,7 +9,7 @@
   <!-- タイトルの表示 -->
   <h2 class="article-title"><%= @doc.title %></h2>
   <!-- 本文の表示 -->
-  <%= image_tag @doc.image.url, alt: "バレーボール", class: "img-article" %>
+  <span id="doc-image"></span>
   <p><span class="oi oi-warning"></span>正式な表記は「ふらば〜る」ですが、本記事では「フラバール」と表記します。</p>
 
   <%= @doc.body.html_safe %>
@@ -39,6 +39,18 @@
       dataType: 'json',
       data : {access_log: {site_id: site_id, doc_id: doc_id }},
       timeout:3000
+    })
+
+    var hostUrl= "/api/v1/doc_images/<%= @doc.id %>";
+    $.ajax({
+      url: hostUrl,
+      type:'GET',
+      dataType: 'json',
+      timeout:3000,
+    }).done(function(data) {
+      alert(data['src']);
+      var tag = '<img src="' + data['src'] + '" alt="<%= @doc.title %>" class="img-article" >';
+      $("#doc-image").append(tag);
     })
 
     //var image = $('img[src*="example.org"]')[0];

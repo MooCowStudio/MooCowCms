@@ -11,5 +11,6 @@ class DocsController < ApplicationController
       return
     end
     @doc = Doc.find_by(filename: params[:filename])
+    GeneratePageJob.perform_later("docs", @doc.id)
   end
 end

@@ -4,7 +4,6 @@ class Api::V1::AccessRankingController < ApplicationController
   # GET /api/v1/access_ranking.json
   def index
     docs = get_access_ranking
-    logger.info(docs.inspect)
     respond_to do |format|
       format.json {render json: docs.map{|doc| [doc.title, doc.filename, doc.image.url]}}
     end

@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :access_logs, only: :create
       resources :access_ranking, only: :index
+      resources :doc_images, only: :show
     end
   end
 end
