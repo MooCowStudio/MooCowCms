@@ -48,7 +48,6 @@
       dataType: 'json',
       timeout:3000,
     }).done(function(data) {
-      alert(data['src']);
       var tag = '<img src="' + data['src'] + '" alt="<%= @doc.title %>" class="img-article" >';
       $("#doc-image").append(tag);
     })
