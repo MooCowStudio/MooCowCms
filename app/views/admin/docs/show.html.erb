@@ -4,7 +4,8 @@
 <%= @doc.site %>
 <%= @doc.layout %>
 <%= @doc.filename %>
-<%= raw @doc.content %>
+<%= @doc.description %>
+<%= raw @doc.body %>
 
 <%= link_to 'Edit', edit_admin_doc_path(@doc) %> |
 <%= link_to 'Back', admin_docs_path %>

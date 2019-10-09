@@ -1,0 +1,14 @@
+<h1>contacts</h1>
+
+<table>
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.name %></td>
+        <td><%= contact.email %></td>
+        <td><%= raw contact.body %></td>
+        <td><%= link_to 'Show', [:admin, contact] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

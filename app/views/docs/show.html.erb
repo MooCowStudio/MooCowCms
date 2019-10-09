@@ -1,5 +1,10 @@
 <% provide(:title, @doc.title) %>
-<% provide(:crumb, breadcrumb_html([{title: @doc.title, url: "/docs/#{@doc.filename}"}])) %>
+<% provide(:meta_title, @doc.title) %>
+<% provide(:meta_type, "article") %>
+<% provide(:meta_url, "https://moocow-furaberl.com/docs/#{@doc.filename}.html") %>
+<% provide(:meta_image, @doc.image.url) %>
+<% provide(:meta_description, @doc.description) %>
+<% provide(:crumb, breadcrumb_html([{title: @doc.title, url: "/docs/#{@doc.filename}.html"}])) %>
 
 <div class="article">
   <!-- 公開日の表示 -->

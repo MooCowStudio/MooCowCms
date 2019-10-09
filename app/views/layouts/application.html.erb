@@ -6,7 +6,17 @@
     <%= csp_meta_tag %>
     <%= favicon_link_tag "/images/favicon.ico" %>
     <meta http-equiv="content-type" charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><meta charset="utf-8">
+    <meta property="og:title" content="<%= yield(:meta_title) %>" />
+    <meta property="og:type" content="<%= yield(:meta_type) %>" />
+    <meta property="og:url" content="<%= yield(:meta_url) %>" />
+    <meta property="og:image" content="<%= yield(:meta_image) %>" />
+    <meta property="og:site_name"  content="MooCowフラバール" />
+    <meta property="og:description" content="<%= yield(:meta_description) %>" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="fb:app_id" content="2416637681929659" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@moocow_st" />
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Kosugi&display=swap" rel="stylesheet">
@@ -45,7 +55,7 @@
         </div>
         <div class="col-md-4 wrap">
           <div class="profile">
-            <h4>プロフィール</h4>
+            <h4>運営者</h4>
             <%= image_tag "/images/profile.jpg", alt: "プロフィール", class: "img-profile" %>
             <h5>牛くん</h5>
             <p>MooCowスタジオ代表</P>
@@ -69,6 +79,8 @@
               <div>
                 <a href="https://hp.moocow-st.com">MooCowスタジオ</a>
                 <a href="https://twitter.com/moocow_st"><i class="fab fa-twitter"></i></a>
+                <%= link_to "プライバシーポリシー", "/privacy_policy" %>
+                <%= link_to "お問い合わせ", "/contact" %>
               </div>
             </div>
           </div>

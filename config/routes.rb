@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :sites
     resources :docs
+    resources :contacts, only: [:index, :show]
     resources :layouts
   end
 
