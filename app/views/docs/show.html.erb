@@ -19,14 +19,14 @@
   <%= @doc.body.html_safe %>
   <div class="sns-btn">
     <div class="twitter-btn">
-      <a href="https://twitter.com/share?url=<%= request.url %>&via=@moocow_st&related=@moocow_st&hashtags=キャベツ,MooCowキャベツ&" rel="nofollow" target="_blank">
+      <a href="https://twitter.com/share?url=<%= "https://moocow-cabbage.com/docs/#{@doc.filename}.html" %>&via=@moocow_st&related=@moocow_st&hashtags=キャベツ,MooCowキャベツ&" rel="nofollow" target="_blank">
       <div><i class="fab fa-twitter"></i></div></a>
     </div>
     <div class="facebook-btn">
-      <a href="http://www.facebook.com/share.php?u=<%= request.url %>" rel="nofollow" target="_blank"><div><i class="fab fa-facebook-f"></i></div></a>
+      <a href="http://www.facebook.com/share.php?u=<%= "https://moocow-cabbage.com/docs/#{@doc.filename}.html" %>" rel="nofollow" target="_blank"><div><i class="fab fa-facebook-f"></i></div></a>
     </div>
     <div class="hatebu-btn">
-      <a href="http://b.hatena.ne.jp/add?mode=confirm&url=<%= request.url %>&title=<%= @doc.title %>"target="_blank"
+      <a href="http://b.hatena.ne.jp/add?mode=confirm&url=<%= "https://moocow-cabbage.com/docs/#{@doc.filename}.html" %>&title=<%= @doc.title %>"target="_blank"
        rel="nofollow"><div>B!</div></a>
     </div>
   </div>
