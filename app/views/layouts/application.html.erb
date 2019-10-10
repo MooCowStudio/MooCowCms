@@ -97,7 +97,7 @@
           timeout:3000,
         }).done(function(data) {
           $.each(data, function(i, value) {
-            var tag = '<div><a href="/docs' + value[1] + '"><img src="' + value[2] + '" alt="' + value[0] + '" class="img-access-ranking"></a><h6><a href="/docs/' + value[1] + '">' + value[0] + '</a></h6></div>'
+            var tag = '<div><a href="/docs/' + value[1] + '"><img src="' + value[2] + '" alt="' + value[0] + '" class="img-access-ranking"></a><h6><a href="/docs/' + value[1] + '">' + value[0] + '</a></h6></div>'
             $(".access-ranking-docs").append(tag)
           })
         })
